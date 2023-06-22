@@ -4,8 +4,21 @@
 	<p>
 		<%= startingContent %>
 	</p>
-	</body>
+	<% console.log(posts) %>
 
-	</html>
+		<% posts.forEach(function(post){ %>
 
-	<%- include("partials/footer" ); -%>
+			<h1>
+				<%= post.title %>
+			</h1>
+			<p>
+				<%= post.content.substring(0,100) +" ..." %>
+					<a href="/posts/<%=post.title%> ">Read More</a>
+			</p>
+
+			<% }); %>
+				</body>
+
+				</html>
+
+				<%- include("partials/footer" ); -%>
